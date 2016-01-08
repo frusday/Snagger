@@ -118,11 +118,7 @@ namespace Snagger2
                 DateTime eleEnd = (DateTime)xmlDoc.Descendants(ns + "DialogInfo").Attributes("End").FirstOrDefault();
                 string eleFrom = xmlDoc.Descendants(ns + "FromURI").First().Value;
                 string eleTo = xmlDoc.Descendants(ns + "ToURI").First().Value;
-                string eleInternal = "";
-                if (xmlDoc.Descendants(nsV2 + "RegisteredInside").Count() > 0)
-                {
-                    eleInternal = xmlDoc.Descendants(nsV2 + "RegisteredInside").First().Value;
-                }
+                string eleInternal = xmlDoc.Descendants(nsV2 + "RegisteredInside").First().Value;
 
                 txtStart.Text = eleStart.ToString();
                 txtEnd.Text = eleEnd.ToString();
@@ -250,6 +246,7 @@ namespace Snagger2
                 lblEnd.Visible = true;
                 lblFrom.Visible = true;
                 lblTo.Visible = true;
+                lblInternal.Visible = true;
                 if (e.Node.Tag.ToString() != "")
                 {
                     string tag = e.Node.Tag.ToString();
@@ -285,6 +282,9 @@ namespace Snagger2
 
             lblIceWarnings.Text = "";
             lblIce.Visible = false;
+
+            lblInternal.Visible = false;
+            txtInternal.Text = "";
 
             flpSide.Controls.Clear();
 
@@ -723,6 +723,7 @@ namespace Snagger2
             {
                 using (Brush brushText = new SolidBrush(Color.Black))
                 {
+                    treeView.FullRowSelect = true;
                     if (e.Node.Tag != "" && texts.Length > 1)
                     {
                         using (Brush brushBack = new SolidBrush(clrRed))
@@ -767,6 +768,11 @@ namespace Snagger2
                     }
                     else
                     {
+                        if (e.Node.IsSelected)
+                        {
+                            e.Graphics.FillRectangle(Brushes.Aqua, e.Bounds.X, e.Bounds.Y, e.Bounds.Width + 19, e.Bounds.Height);
+                        }
+                        
                         e.Graphics.DrawString(texts[0], font, brushText, e.Bounds.Left, e.Bounds.Top);
                     }
                 }

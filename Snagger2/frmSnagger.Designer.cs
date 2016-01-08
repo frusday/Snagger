@@ -185,7 +185,7 @@
             this.splitCont.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitCont.Panel2.Controls.Add(this.lstView);
             this.splitCont.Size = new System.Drawing.Size(877, 517);
-            this.splitCont.SplitterDistance = 142;
+            this.splitCont.SplitterDistance = 245;
             this.splitCont.SplitterWidth = 5;
             this.splitCont.TabIndex = 13;
             // 
@@ -197,7 +197,7 @@
             this.treeView.Location = new System.Drawing.Point(0, 0);
             this.treeView.Name = "treeView";
             this.treeView.ShowNodeToolTips = true;
-            this.treeView.Size = new System.Drawing.Size(142, 517);
+            this.treeView.Size = new System.Drawing.Size(245, 517);
             this.treeView.TabIndex = 0;
             this.treeView.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.treeView_DrawNode);
             this.treeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeViewNode_Click);
@@ -216,7 +216,7 @@
             this.lstView.HideSelection = false;
             this.lstView.Location = new System.Drawing.Point(0, 0);
             this.lstView.Name = "lstView";
-            this.lstView.Size = new System.Drawing.Size(730, 517);
+            this.lstView.Size = new System.Drawing.Size(627, 517);
             this.lstView.TabIndex = 0;
             this.lstView.UseCompatibleStateImageBehavior = false;
             this.lstView.View = System.Windows.Forms.View.Details;
